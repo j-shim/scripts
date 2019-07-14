@@ -21,6 +21,7 @@ echo "========================================================="
 echo "Log out and log back in, then run Part 2 of the script..."
 echo "========================================================="
 
+exit 0
 # Part 2
 
 cd
@@ -43,7 +44,7 @@ echo "========================================================="
 echo "Log out and log back in, then run Part 3 of the script..."
 echo "========================================================="
 
-
+exit 0
 # Part 3
 
 cd
