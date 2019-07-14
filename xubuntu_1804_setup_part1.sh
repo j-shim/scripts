@@ -7,8 +7,7 @@ echo "synclient VertScrollDelta=-73" >> ~/.profile
 echo "synclient HorizScrollDelta=-73" >> ~/.profile
 
 # Install essentials
-sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make
-gparted xclip xsel
+sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make gparted xclip xsel
 
 # Install tlp (improves battery life)
 sudo apt install tlp
