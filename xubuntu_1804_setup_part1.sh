@@ -7,7 +7,7 @@ echo "synclient VertScrollDelta=-73" >> ~/.profile
 echo "synclient HorizScrollDelta=-73" >> ~/.profile
 
 # Install essentials
-sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make gparted xclip xsel sqlite3 xscreensaver
+sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make gparted xclip xsel sqlite3
 
 # Install tlp (improves battery life)
 sudo apt install tlp
@@ -96,8 +96,9 @@ sudo apt install cryptsetup
 sudo snap install code --classic
 
 # Fix Black screen after Suspend Resume: Remove light-locker
-# Note: Lock Screen is no longer functioning
+# Note: Lock Screen is no longer functioning - Replace with xscreensaver
 sudo apt remove light-locker
+sudo apt install xscreensaver
 
 # Fix inactivity-sleep-mode-on-battery (does not suspend after inactivity)
 # if output of "xfconf-query -c xfce4-power-manager -lv" doesn't contain this line:
