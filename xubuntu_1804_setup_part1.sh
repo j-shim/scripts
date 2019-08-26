@@ -112,3 +112,15 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Arc-Dark"
 # Set copy/paste alias, similar to macOS
 echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc
 echo "alias pbpaste='xclip -selection clipboard -o'" >> ~/.zshrc
+
+# Fix Screen Problem (Intel GeminiLake corruption at top of screen caused by
+# fbc)
+# Refer to: https://bugs.freedesktop.org/show_bug.cgi?id=108085
+sudo touch /etc/modprobe.d/i915.conf
+sudo echo "options i915 enable_fbc=0" >> /etc/modprobe.d/i915.conf
+sudo update-initramfs -u
+
+# Done
+echo "======================================"
+echo "Reboot the system, and you're all set!"
+echo "======================================"
