@@ -22,6 +22,9 @@ cd
 git clone https://github.com/ProgrammingFonts/ProgrammingFonts.git
 mv ProgrammingFonts .fonts
 
+# Free fonts from Google
+sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea
+
 # Install Timeshift
 # https://github.com/teejee2008/timeshift
 sudo apt-add-repository -y ppa:teejee2008/ppa
@@ -32,6 +35,10 @@ sudo apt install timeshift
 # https://easylinuxtipsproject.blogspot.com/p/first-xubuntu.html#ID1.1
 ## reduce swap size
 ## cat /proc/sys/vm/swappiness
+# run gedit admin:///etc/sysctl.conf
+# paste-># Decrease swap usage to a more reasonable level
+# paste->vm.swappiness=1
+## should reboot
 
 sudo apt install xubuntu-restricted-extras
 
