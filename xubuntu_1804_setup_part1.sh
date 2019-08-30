@@ -2,12 +2,12 @@
 
 cd
 # Reverse scroll direction
-echo "\n# Fix Natural Scrolling" >> ~/.profile
+echo "# Fix Natural Scrolling" >> ~/.profile
 echo "synclient VertScrollDelta=-73" >> ~/.profile
 echo "synclient HorizScrollDelta=-73" >> ~/.profile
 
 # Install essentials
-sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make gparted xclip xsel sqlite3
+sudo apt install arc-theme git vim zsh tree htop curl wget python3 gcc g++ make gparted xclip xsel sqlite3 snapd
 
 # Install tlp (improves battery life)
 sudo apt install tlp
