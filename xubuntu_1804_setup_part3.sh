@@ -40,7 +40,7 @@ sudo apt install timeshift
 # paste->vm.swappiness=1
 ## should reboot
 
-sudo apt install xubuntu-restricted-extras
+sudo apt install ubuntu-restricted-extras
 
 # Enable Firewall
 sudo ufw enable
@@ -80,6 +80,16 @@ echo "alias pbpaste='xclip -selection clipboard -o'" >> ~/.zshrc
 sudo touch /etc/modprobe.d/i915.conf
 sudo echo "options i915 enable_fbc=0" >> /etc/modprobe.d/i915.conf
 sudo update-initramfs -u
+
+# Install Homebrew (Linux)
+sudo apt install linuxbrew-wrapper
+brew
+
+sudo apt install build-essential
+echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.zshrc
+echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >> ~/.zshrc
+echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >> ~/.zshrc
+brew install gcc
 
 # Done
 echo "======================================"
