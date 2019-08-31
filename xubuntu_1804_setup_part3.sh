@@ -1,8 +1,13 @@
 #!/bin/bash -v
 
-# Part 3
+##########
+# Part 3 #
+##########
 cd
-# Install libinput-gestures multitouch cont'd
+
+###############################################
+# Install libinput-gestures multitouch cont'd #
+###############################################
 sudo apt install xdotool wmctrl libinput-tools
 
 git clone https://github.com/bulletmark/libinput-gestures.git
@@ -10,7 +15,9 @@ mv libinput-gestures .libinput-gestures
 cd .libinput-gestures
 sudo make install
 
-# custom gestures config
+##########################
+# custom gestures config #
+##########################
 cp /etc/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
 libinput-gestures-setup autostart
@@ -18,15 +25,21 @@ libinput-gestures-setup start
 
 cd
 
-# Programming Fonts
+#####################
+# Programming Fonts #
+#####################
 git clone https://github.com/ProgrammingFonts/ProgrammingFonts.git
 mv ProgrammingFonts .fonts
 
-# Free fonts from Google
+##########################
+# Free fonts from Google #
+##########################
 sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea
 
-# Install Timeshift
-# https://github.com/teejee2008/timeshift
+###########################################
+# Install Timeshift                       #
+# https://github.com/teejee2008/timeshift #
+###########################################
 sudo apt-add-repository -y ppa:teejee2008/ppa
 sudo apt update
 sudo apt install timeshift
@@ -42,46 +55,66 @@ sudo apt install timeshift
 
 sudo apt install ubuntu-restricted-extras
 
-# Enable Firewall
+###################
+# Enable Firewall #
+###################
 sudo ufw enable
-# Check status
+#########################
+# Check Firewall status #
+#########################
 sudo ufw status verbose
 
-# Set ROOT Password
+#####################
+# Set ROOT Password #
+#####################
 sudo passwd
 
-# Set LUKS Encryption
-sudo apt install cryptsetup
+#######################
+# Set LUKS Encryption #
+#######################
+#sudo apt install cryptsetup
 
-# Install VSCode
+##################
+# Install VSCode #
+##################
 sudo snap install code --classic
 
-# Fix Black screen after Suspend Resume: Remove light-locker
-# Note: Lock Screen is no longer functioning - Replace with xscreensaver
+##########################################################################
+# Fix Black screen after Suspend Resume: Remove light-locker             #
+# Note: Lock Screen is no longer functioning - Replace with xscreensaver #
+##########################################################################
 sudo apt remove light-locker
 sudo apt install xscreensaver
 
-# Fix inactivity-sleep-mode-on-battery (does not suspend after inactivity)
-# if output of "xfconf-query -c xfce4-power-manager -lv" doesn't contain this line:
-# "/xfce4-power-manager/inactivity-sleep-mode-on-battery   1"
+#####################################################################################
+# Fix inactivity-sleep-mode-on-battery (does not suspend after inactivity)          #
+# if output of "xfconf-query -c xfce4-power-manager -lv" doesn't contain this line: #
+# "/xfce4-power-manager/inactivity-sleep-mode-on-battery   1"                       #
+#####################################################################################
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-sleep-mode-on-battery -n -t int -s 1
 
-# Set Theme to "Arc-Dark"
+###########################
+# Set Theme to "Arc-Dark" #
+###########################
 xfconf-query -c xfwm4 -p /general/theme -s "Arc-Dark"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Arc-Dark"
 
-# Set copy/paste alias, similar to macOS
+##########################################
+# Set copy/paste alias, similar to macOS #
+##########################################
 echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc
 echo "alias pbpaste='xclip -selection clipboard -o'" >> ~/.zshrc
 
 # Fix Screen Problem (Intel GeminiLake corruption at top of screen caused by
 # fbc)
 # Refer to: https://bugs.freedesktop.org/show_bug.cgi?id=108085
-sudo touch /etc/modprobe.d/i915.conf
-sudo echo "options i915 enable_fbc=0" >> /etc/modprobe.d/i915.conf
-sudo update-initramfs -u
+#sudo touch /etc/modprobe.d/i915.conf
+#sudo echo "options i915 enable_fbc=0" >> /etc/modprobe.d/i915.conf
+#sudo update-initramfs -u
 
-# Install Homebrew (Linux)
+############################
+# Install Homebrew (Linux) #
+############################
 sudo apt install linuxbrew-wrapper
 brew
 
@@ -91,9 +124,7 @@ echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >> ~/.zshr
 echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >> ~/.zshrc
 brew install gcc
 
-# Done
-echo "======================================"
-echo "Reboot the system, and you're all set!"
-echo "======================================"
-
+##########################################
+# Reboot the system, and you're all set! #
+##########################################
 exit 0
