@@ -48,12 +48,12 @@ sudo passwd
 ##################
 sudo snap install code --classic
 
-##########################################################################
-# Fix Black screen after Suspend Resume: Remove light-locker             #
-# Note: Lock Screen is no longer functioning - Replace with xscreensaver #
-##########################################################################
+###############################################################################
+# Fix Black screen after Suspend Resume: Remove light-locker                  #
+# Note: Lock Screen is no longer functioning - Replace with xfce4-screensaver #
+###############################################################################
 sudo apt remove light-locker
-sudo apt install xscreensaver
+sudo apt install xfce4-screensaver
 
 #####################################################################################
 # Fix inactivity-sleep-mode-on-battery (does not suspend after inactivity)          #
