@@ -12,6 +12,11 @@ echo "# Fix Natural Scrolling" >> ~/.profile
 echo "synclient VertScrollDelta=-73" >> ~/.profile
 echo "synclient HorizScrollDelta=-73" >> ~/.profile
 
+#########################
+# Enable Palm Detection #
+#########################
+echo "synclient PalmDetect=1" >> ~/.profile
+
 ######################
 # Install essentials #
 ######################
