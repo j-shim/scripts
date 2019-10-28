@@ -2,12 +2,12 @@
 
 Collection of personal scripts (bash, etc)
 
-## xubuntu_1804_setup_part1.sh
+## xubuntu_1910_setup_part*.sh
 
-This script is intended to be run after fresh installation of **Xubuntu 18.04**
+This script is intended to be run after fresh installation of **Xubuntu 19.10**
 on my secondary 11.6-inch laptop **ASUS L203MA**.
 
-I wrote this script while setting up (or tweaking) Xubuntu 18.04, because
+I wrote this script while setting up (or tweaking) Xubuntu 19.10, because
 I didn't want to set everything manually (which took a lot of time and effort)
 in case Xubuntu needs to be reinstalled.
 
@@ -16,13 +16,13 @@ in case Xubuntu needs to be reinstalled.
 In terminal, cd to where this script is saved to, and run:
 
 ```bash
-./xubuntu_1804_setup_part1.sh
+./xubuntu_1910_setup_part*.sh
 ```
 
 or
 
 ```bash
-bash xubuntu_1804_setup_part1.sh
+bash xubuntu_1910_setup_part*.sh
 ```
 
 if not executable.
