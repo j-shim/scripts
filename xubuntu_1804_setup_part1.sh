@@ -56,9 +56,10 @@ sudo snap install code --classic
 ###############################################################################
 # Fix Black screen after Suspend Resume: Remove light-locker                  #
 # Note: Lock Screen is no longer functioning - Replace with xfce4-screensaver #
+# UPDATE: No longer needed after upgrading from 18.04 to 19.10                #
 ###############################################################################
-sudo apt remove light-locker
-sudo apt install xfce4-screensaver
+#sudo apt remove light-locker
+#sudo apt install xfce4-screensaver
 
 #####################################################################################
 # Fix inactivity-sleep-mode-on-battery (does not suspend after inactivity)          #
@@ -92,11 +93,6 @@ sudo apt-add-repository -y ppa:teejee2008/ppa
 sudo apt update
 sudo apt install timeshift
 
-##########################
-# Make zsh default shell #
-##########################
-chsh -s $(which zsh)
-
 ###################################################
 # Install libinput-gestures multitouch            #
 # https://github.com/bulletmark/libinput-gestures #
@@ -106,5 +102,10 @@ sudo gpasswd -a $USER input
 ###########################################################################
 # Log out and log back in, relaunch zsh, then run Part 2 of the script... #
 ###########################################################################
+
+#####################
+# Install oh-my-zsh #
+#####################
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 exit 0
