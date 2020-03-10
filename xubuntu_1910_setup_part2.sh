@@ -54,6 +54,31 @@ libinput-gestures-setup start
 
 cd
 
+##################
+# Vim Solarized8 #
+##################
+git clone https://github.com/lifepillar/vim-solarized8.git \
+      ~/.vim/pack/themes/opt/solarized8
+
+############################################
+# Oh My Zsh Theme: powerlevel10k           #
+# https://github.com/romkatv/powerlevel10k #
+############################################
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+
+################################
+# Nerd Fonts for powerlevel10k #
+################################
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+cd
+# Set Terminal font to: MesloLGS NF Regular
+
 #############################################################
 # Log out and log back in, then run Part 3 of the script... #
 #############################################################
