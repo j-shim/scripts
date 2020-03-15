@@ -1,4 +1,4 @@
-#!/bin/bash -v
+#!/usr/bin/env bash -v
 
 ##########################
 # Part 3 (needs cleanup) #
