@@ -6,14 +6,14 @@
 ##########################
 # Uninstall old versions #
 ##########################
-sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt remove docker docker-engine docker.io containerd runc
 
 #########################
 # SET UP THE REPOSITORY #
 #########################
-sudo apt-get update
+sudo apt update
 
-sudo apt-get install \
+sudo apt install \
   apt-transport-https \
   ca-certificates \
   curl \
@@ -44,8 +44,8 @@ sudo add-apt-repository \
 #########################
 # INSTALL DOCKER ENGINE #
 #########################
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
 
 ##########################
 # INSTALL DOCKER COMPOSE #
